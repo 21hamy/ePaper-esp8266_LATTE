@@ -35,7 +35,7 @@
 #include <GxEPD.h>
 
 // select the display class to use, only one
-// #include <GxGDEP015OC1/GxGDEP015OC1.cpp>    // 1.54" b/w
+//#include <GxGDEP015OC1/GxGDEP015OC1.cpp>    // 1.54" b/w
 //#include <GxGDEW0154Z04/GxGDEW0154Z04.cpp>  // 1.54" b/w/r 200x200
 //#include <GxGDEW0154Z17/GxGDEW0154Z17.cpp>  // 1.54" b/w/r 152x152
 //#include <GxGDE0213B1/GxGDE0213B1.cpp>      // 2.13" b/w
@@ -44,7 +44,7 @@
 //#include <GxGDEW029Z10/GxGDEW029Z10.cpp>    // 2.9" b/w/r
 //#include <GxGDEW027C44/GxGDEW027C44.cpp>    // 2.7" b/w/r
 //#include <GxGDEW027W3/GxGDEW027W3.cpp>      // 2.7" b/w
-// #include <GxGDEW042T2/GxGDEW042T2.cpp>      // 4.2" b/w
+//#include <GxGDEW042T2/GxGDEW042T2.cpp>      // 4.2" b/w
 #include <GxGDEW042Z15/GxGDEW042Z15.cpp>    // 4.2" b/w/r
 //#include <GxGDEW0583T7/GxGDEW0583T7.cpp>    // 5.83" b/w
 //#include <GxGDEW075T8/GxGDEW075T8.cpp>      // 7.5" b/w
@@ -63,7 +63,7 @@
 //static const uint8_t SCK   = 14; // D5
 
 GxIO_Class io(SPI, /*CS=D8*/ SS, /*DC=D3*/ 0, /*RST=D4*/ 2); // arbitrary selection of D3(=0), D4(=2), selected for default of GxEPD_Class
-GxEPD_Class display(io /*RST=D4*/ /*BUSY=D2*/); // daefault selection of D4(=2), D2(=4)
+GxEPD_Class display(io /*RST=D4*/ /*BUSY=D2*/); // default selection of D4(=2), D2(=4)
 // Heltec E-Paper 1.54" b/w without BUSY
 //GxEPD_Class display(io, /*RST=D4*/ 2, /*BUSY=D2*/ -1); // default selection of D4(=2), no BUSY
 
@@ -84,7 +84,7 @@ GxEPD_Class display(io /*RST=9*/ /*BUSY=7*/); // default selection of (9), 7
 void setup()
 {
   Serial.begin(115200);
-  display.init(); // enable diagnostic output on Serial
+  display.init();
 }
 
 void loop()
